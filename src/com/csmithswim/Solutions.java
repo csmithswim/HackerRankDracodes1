@@ -111,5 +111,22 @@ public class Solutions {
         System.out.println(testCase0.length - groupCounting);
         return testCase0.length - groupCounting;
     }
+
+    public static void validEmailAddress(String[] array) {
+        //Write a regex that tests for the following
+        //starts with 1-6 lowercase english letters
+        //lowercase letters can be followed by an optional _
+        //the optional underscore is followed by 0-5 optional digits
+        //the domain must be hackerrank.com
+
+        String[] testCase0 = {"julia@hackerrank.com", "julia_@hackerrank.com", "julia_0@hackerrank.com",
+                "julia0_@hackerrank.com", "julia@gmail.com"};
+
+        String regex = "[a-z]{1,6}(_)?[0-9]{0,5}@hackerrank.com";
+
+        for (String e : testCase0) {
+            System.out.println(e.matches(regex));
+        }
+    }
 }
 
