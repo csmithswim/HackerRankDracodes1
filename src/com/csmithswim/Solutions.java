@@ -81,5 +81,35 @@ public class Solutions {
         }
         System.out.println(sum);
     }
+
+    public static int connectedGroups(int n, String[] array) {
+
+
+        //parameter is n(size of the binary string array, string[]
+        //output is int
+
+        //store variable of []array and a groupCounting variable
+        //traverse array two dimensionally and compare row index with column index
+        //in a linear way
+        //IF row/column && column/row == 1 then increment groupCounting
+        //Return n - groupCounting
+
+        String[] exampleCase = {"110", "110", "001"};
+        String[] testCase0 = {"1100", "1110", "0110", "0001"};
+        int groupCounting = 0;
+        int loopCounter = 0;
+
+        //first traversal is 0/1 && 1/0
+        //second traversal is 1/2 && 2/1
+        for (int i = 0, j = 1; loopCounter < testCase0.length - 1; i++, j++) {
+            if (testCase0[i].charAt(j) == '1' && testCase0[j].charAt(i) == '1') {
+                groupCounting++;
+            }
+            loopCounter++;
+        }
+
+        System.out.println(testCase0.length - groupCounting);
+        return testCase0.length - groupCounting;
+    }
 }
 
