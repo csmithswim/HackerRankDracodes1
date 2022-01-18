@@ -5,6 +5,23 @@ import java.util.Map;
 
 public class Solutions {
 
+    public static void fizzBuzz() {
+        int testcase1 = 15;
+
+        for (int i = 1; i <= 15; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                System.out.println("FizzBuzz");
+            }
+            else if (i % 3 == 0) {
+                System.out.println("Fizz");
+            }
+            else if (i % 5 == 0) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(i);
+            }
+    }
+
     public static void priceCheck() {
         //input - 4 string arrays
         //output - int(sum of errors)
@@ -128,5 +145,7 @@ public class Solutions {
             System.out.println(e.matches(regex));
         }
     }
+
+
 }
 
